@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView }   from 'react-native';
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity }   from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from 'native-base';
+import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body, Image } from 'native-base';
 import CardComponent from '../CardComponent';
 
 class HomeTab extends Component {
@@ -16,10 +17,17 @@ class HomeTab extends Component {
         return(
             <Container style={styles.container}>
 
-            <Header style={{backgroundColor: 'white'}}ss>
+            <Header style={{backgroundColor: 'white'}}>
                 <Left><Icon name="ios-camera" style={{paddingLeft: 10}}></Icon></Left>
-                <Body><Text>Instagram</Text></Body>
-                <Right><Icon name="ios-send" style={{paddingRight: 10}}></Icon></Right>
+                    <Text style={{paddingTop:20, fontWeight:'bold',right:35, color:'black'}}>Instagram</Text>
+                    {/* <Thumbnail 
+                    source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaY1ZDZIyJA9ANg-W-atEDI2SsdtOkCs6YEE25I85cdu7MA7kO'}}
+                    style={{width:250, height: 30}} /> */}
+                <Right>
+                <TouchableOpacity style={{paddingRight: 10} } onPress={() => this.props.navigation.navigate('Send')}>
+                    <Icon name="ios-send" />
+                </TouchableOpacity>
+                </Right>
             </Header>
 
                 <Content>
@@ -68,16 +76,16 @@ class HomeTab extends Component {
                             </ScrollView>
                         </View>
                     </View>
-                        <CardComponent imageSource="1" likes="172"/>
-                        <CardComponent imageSource="2" likes="272"/>
-                        <CardComponent imageSource="3" likes="372"/>
+                        <CardComponent imageSource="1" likes="Disukai oleh"/>
+                        <CardComponent imageSource="2" likes="Disukai oleh"/>
+                        <CardComponent imageSource="3" likes="Disukai oleh"/>
 
                 </Content>
             </Container>
         );
     }
 }
-export default HomeTab;
+
 
 const styles = StyleSheet.create({
     container: {
@@ -85,3 +93,5 @@ const styles = StyleSheet.create({
       backgroundColor: "white"
     },
   });
+
+  export default withNavigation (HomeTab);

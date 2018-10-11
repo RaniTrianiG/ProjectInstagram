@@ -13,12 +13,7 @@ import ProfileTab from './AppTabNavigator/ProfileTab'
 class MainScreen extends Component {
 
     static navigationOptions = {
-
-        // headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10}} />,
-        // title: "Instagram",
-        // headerRight: <Icon name="ios-send" style={{ paddingRight: 10}} />
-header: null
-
+        header: null
     }
 
     render(){

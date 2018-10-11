@@ -15,15 +15,18 @@ class CardComponent extends Component {
         }
 
         return(
-            <Card>
+            <Card style={{height: 500, borderColor: 'white'}}>
                 <CardItem>
                     <Left>
                         <Thumbnail source={require('../assets/you.jpg')} />
                         <Body>
-                            <Text>Rani Triani G</Text>
-                            <Text note>Oct 07, 2018</Text>
+                            <Text style={{color:'black', fontWeight:'bold'}}>ranitriani23</Text>
+                            <Text note style={{color:'black'}}>Programmer </Text>
                         </Body>
                     </Left>
+                    <Right>
+                        <Icon style={{flexDirection: 'row', color: 'grey'}} name="md-more" />
+                    </Right>
                 </CardItem>
                 <CardItem cardBody>
                     <Image source={images [this.props.imageSource]} style={{height: 200, width: null, flex: 1}} />
@@ -31,23 +34,41 @@ class CardComponent extends Component {
                 <CardItem style={{height: 45}}>
                     <Left>
                         <Button transparent>
-                            <Icon name="ios-heart" style={{color:'black'}} />
+                            <Icon name="ios-heart" style={{color:'#f7054d', fontSize: 30}} />
                         </Button>
                         <Button transparent>
-                            <Icon name="ios-chatbubbles" style={{color:'black'}} />
+                            <Icon name="ios-chatbubbles" style={{color:'black', fontSize: 30}} />
                         </Button>
                         <Button transparent>
-                            <Icon name="ios-send" style={{color:'black'}} />
+                            <Icon name="ios-send" style={{color:'black', fontSize: 30}} />
                         </Button>
                     </Left>
+                    <Right style={{flexDirection: 'row', left: 110}}>
+                    <Button transparent>
+                            <Icon name="share" style={{color:'grey', fontSize: 30, right: 20}} />
+                        </Button>
+                        <Button transparent>
+                            <Icon name="bookmark" style={{color:'grey', fontSize: 30}} />
+                        </Button>
+                    </Right>
                 </CardItem>
             <CardItem style={{ height: 20}}>
-                <Text>{this.props.likes}</Text>
+                <Text style={{color: 'black'}}>{this.props.likes}</Text>
             </CardItem>
+            <Text style={{fontWeight: 'bold', color:'black', left: 94, top:-22}}> rimanfn, raflygnr </Text>
+            <Text style={{color:'black', left: 210, top: -40}}>dan</Text>
+            <Text style={{fontWeight: 'bold', color:'black', left: 240, top: -59}}>10.653 lainnya</Text>
             <CardItem>
                 <Body>
-                    <Text style={{fontWeight: "bold"}}>ranitriani23</Text>
-                    <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
+                    <Text style={{fontWeight: "bold", color: 'black', top:-70}}>ranitriani23</Text>
+                    <Text style={{color:'black', left: 75, top: -89}}>Bahagia ketika benar" menemukan </Text>
+                    <Text style={{color:'black', top: -86}}>passion sesuai dengan kemampuan.</Text>
+                    <Text style={{color: 'grey', top: -80}}>Lihat semua 21 komentar</Text>
+                    <Text style={{fontWeight: "bold", color: 'black', top: -75}}>rita_yulita</Text>
+                    <Text style={{color:'black', left: 65, top: -94}}>hemmmmm... </Text>
+                    <Text style={{fontWeight: "bold", color: 'black', top: -87}}>reninurr_</Text>
+                    <Text style={{color:'black', left: 65, top: -107}}>tetap semangat sayangku.. </Text>
+                    <Text style={{color:'grey', fontSize: 10, top: -98}}>4 HARI YANG LALU</Text>
                 </Body>
             </CardItem>
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Platform, Image, Dimensions }   from 'react-native';
 
-import { Icon, Container, Content, Header, Left, Body, Right, Button } from 'native-base';
+import { Icon, Container, Content, Header, Left, Body, Right, Button, Thumbnail } from 'native-base';
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import CardComponent from '../CardComponent'
@@ -69,9 +69,9 @@ class ProfileTab extends Component {
         else if (this.state.activeIndex == 1){
             return(
                 <View>
-                    <CardComponent imageSource="1" likes="100" />
-                    <CardComponent imageSource="2" likes="100" />
-                    <CardComponent imageSource="3" likes="100" />
+                    <CardComponent imageSource="1" likes="Disukai oleh" />
+                    <CardComponent imageSource="2" likes="Disukai oleh" />
+                    <CardComponent imageSource="3" likes="Disukai oleh" />
                 </View>
             )
         }
@@ -114,12 +114,12 @@ class ProfileTab extends Component {
                                 </View>
                             </View>
                             <View style={{flexDirection: 'row', paddingTop: 10}}>
-                                <Button bordered dark style={{flex:3, marginLeft:10, justifyContent: 'center', height: 30}}>
+                                <Button bordered dark style={{flex:3, marginLeft:10, marginRight: 10, justifyContent: 'center', height: 30, color: '#ECF0F1' }}>
                                     <Text style={{fontWeight: 'bold', color: 'black'}}>Edit Profile</Text>
                                 </Button>
-                                <Button bordered dark style={{flex:1, height: 30, marginRight:10, marginLeft:5, justifyContent: 'center'}}>
+                                {/* <Button bordered dark style={{flex:1, height: 30, marginRight:10, marginLeft:5, justifyContent: 'center'}}>
                                     <Icon name="settings" />
-                                </Button>
+                                </Button> */}
                             </View>
                         </View>
                     </View>
@@ -128,6 +128,23 @@ class ProfileTab extends Component {
                         <Text style={{color: 'black'}}>Be a good and smart of programmer</Text>
                         <Text style={{color: 'black'}}>Linkedin</Text>
                         <Text style={{color: '#4286f4'}}>https://www.linkedin.com/in/rani-triani-gustia-6a69a714a/</Text>
+                    </View>
+                    <View style={{flexDirection: 'row', left: 10}}>
+                    <Icon name="ios-add-circle" style={{color:'#D0D3D4', fontSize: 65, top: -5, borderColor: 'black'}}/>
+        
+                        <Thumbnail 
+                                style={{marginHorizontal:7, borderColor: '#bdb8c4', borderWidth: 2}}
+                                source={require('../../assets/Stories/2.jpg')} />
+                        
+                        <Thumbnail 
+                                style={{marginHorizontal:7, borderColor: '#bdb8c4', borderWidth: 2}}
+                                source={require('../../assets/Stories/1.jpg')} />
+                        
+                    </View>
+                    <View style={{flexDirection: 'row', top: -5}}>
+                        <Text style={{color: 'black', fontSize: 12, left: 25}}>Baru</Text>
+                        <Text style={{color: 'black', fontSize: 12, left: 60}}>HBD</Text>
+                        <Text style={{color: 'black', fontSize: 12, left: 90}}>by jmbee_x</Text>
                     </View>
                 </View>
                 <View>
